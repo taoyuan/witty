@@ -8,7 +8,8 @@ program.version(witty.version);
 program.command('create <dir>')
   .description('-> create Witty application')
   .action(function (path) {
-    witty.cli.create(path);
+    witty.generators.init(witty);
+    witty.generators.perform('app', process.argv.slice(3));
   });
 
 program.command('server')

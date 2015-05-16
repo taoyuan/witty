@@ -1,0 +1,24 @@
+{
+  "name": "{{ APPNAME }}",
+  "version": "0.0.1",
+  "engines": ["node >= 0.10.0"],
+  "main": "server.js",
+  "private": true,
+  "dependencies": {
+    "witty": "0.6.x",
+    "bootable": "0.2.x",
+    "bootable-environment": "0.2.x",
+    "express": "4.x.x",
+    "connect-powered-by": "0.1.x",
+    "ejs": "0.8.x",
+    "morgan": "1.x.x",
+    "serve-favicon": "2.x.x",
+    "serve-static": "1.9.x",
+    "body-parser": "1.x.x",
+    "method-override": "2.x.x",
+    "errorhandler": "1.x.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
