@@ -1,5 +1,5 @@
 {
-  "name": "maglev",
+  "name": "witty",
   "version": "0.6.0",
   "description": "Fast and frictionless MVC web framework for Node.js.",
   "keywords": [
@@ -20,10 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/viadeo/maglev.git"
+    "url": "git://github.com/taoyuan/witty.git"
   },
   "bugs": {
-    "url": "http://github.com/viadeo/maglev/issues"
+    "url": "http://github.com/taoyuan/witty/issues"
   },
   "licenses": [
     {
@@ -32,7 +32,7 @@
     }
   ],
   "bin": {
-    "maglev": "./bin/maglev.js"
+    "witty": "./bin/witty.js"
   },
   "main": "./lib",
   "dependencies": {
@@ -53,7 +53,7 @@
   "devDependencies": {
     "chai": "2.x.x",
     "chai-connect-middleware": "0.3.x",
-    "chai-maglev-helpers": "git+ssh://git@github.com:viadeo/chai-maglev-helpers.git#0.2.0",
+    "chai-witty-helpers": "taoyuan/chai-witty-helpers",
     "codeclimate-test-reporter": "0.0.4",
     "istanbul": "0.3.x",
     "jshint": "2.7.x",

@@ -1,42 +1,42 @@
-# Maglev
+# Witty
 
-[![Build](https://circleci.com/gh/viadeo/maglev.svg?style=shield)](https://circleci.com/gh/viadeo/maglev)
-[![Coverage](https://codeclimate.com/github/viadeo/maglev/badges/coverage.svg)](https://codeclimate.com/github/viadeo/maglev)
-[![Code Climate](https://codeclimate.com/github/viadeo/maglev/badges/gpa.svg)](https://codeclimate.com/github/viadeo/maglev)
-[![Dependencies](https://david-dm.org/viadeo/maglev.svg)](https://david-dm.org/viadeo/maglev)
+[![Build](https://circleci.com/gh/taoyuan/witty.svg?style=shield)](https://circleci.com/gh/taoyuan/witty)
+[![Coverage](https://codeclimate.com/github/taoyuan/witty/badges/coverage.svg)](https://codeclimate.com/github/taoyuan/witty)
+[![Code Climate](https://codeclimate.com/github/taoyuan/witty/badges/gpa.svg)](https://codeclimate.com/github/taoyuan/witty)
+[![Dependencies](https://david-dm.org/taoyuan/witty.svg)](https://david-dm.org/taoyuan/witty)
 
-Maglev is a framework that brings structure and MVC patterns to web
+Witty is a framework that brings structure and MVC patterns to web
 applications using [Node](http://nodejs.org) and [Express](http://expressjs.com/).
 
-This repository is a GitHub fork of [jaredhanson/locomotive](https://github.com/jaredhanson/locomotive).
+This repository is forked from [viadeo/maglev](https://github.com/viadeo/maglev) and [jaredhanson/locomotive](https://github.com/jaredhanson/locomotive).
 
 ## Installation
 
-    $ npm install locomotive
+    $ npm install witty
 
 ## Quick Start
 
-`maglev`, the command line interface to Maglev, can be used to generate a
-starter application. To use it, install Maglev globally.
+`witty`, the command line interface to Witty, can be used to generate a
+starter application. To use it, install Witty globally.
 
-    $ npm install locomotive -g
+    $ npm install witty -g
 
 Next, create an application and install dependencies.
 
-    $ maglev create hello
+    $ witty create hello
     $ cd hello
     $ npm install
 
 Start the server.
 
-    $ maglev server
+    $ witty server
 
 The application is available at [localhost:3000](http://localhost:3000).
 
 Start the server with node debug mode
 
-	$ maglev server --debug (node --debug mode)
-	$ maglev server --debug-brk (node --debug-brk mode)
+	$ witty server --debug (node --debug mode)
+	$ witty server --debug-brk (node --debug-brk mode)
 
 Then you can use debug tools like [node-inspector](https://github.com/dannycoates/node-inspector) to debug your application as usual.
 
@@ -64,6 +64,7 @@ web applications powered by Locomotive.
 
 ## Credits
 
+  - [Viadeo Team](http://github.com/viadeo/maglev)
   - [Jared Hanson](http://github.com/jaredhanson)
 
 ## License

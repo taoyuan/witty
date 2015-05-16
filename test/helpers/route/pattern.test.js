@@ -2,17 +2,17 @@
 
 var chai = require('chai')
   , patternHelper = require('../../../lib/helpers/route/pattern');
-  
+
 
 describe('helpers/route/pattern', function() {
-  
+
   describe('path', function() {
-    
+
     describe('without placeholder', function() {
       var pathHelper;
-    
+
       before(function(done) {
-        chai.maglev.helper(patternHelper.path('/songs'), 'test', 'show')
+        chai.witty.helper(patternHelper.path('/songs'), 'test', 'show')
           .req(function(req) {
             req.headers.host = 'www.example.com';
           })
@@ -22,17 +22,17 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct path', function() {
         expect(pathHelper()).to.equal('/songs');
       });
     });
-    
+
     describe('with one placeholder', function() {
       var pathHelper;
-    
+
       before(function(done) {
-        chai.maglev.helper(patternHelper.path('/songs/:id'), 'test', 'show')
+        chai.witty.helper(patternHelper.path('/songs/:id'), 'test', 'show')
           .req(function(req) {
             req.headers.host = 'www.example.com';
           })
@@ -42,7 +42,7 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct path with number', function() {
         expect(pathHelper(7)).to.equal('/songs/7');
         expect(pathHelper(0)).to.equal('/songs/0');
@@ -60,12 +60,12 @@ describe('helpers/route/pattern', function() {
         }).to.throw('Incorrect number of arguments passed to route helper for /songs/:id');
       });
     });
-    
+
     describe('with one placeholder and one optional placeholder', function() {
       var pathHelper;
-    
+
       before(function(done) {
-        chai.maglev.helper(patternHelper.path('/songs/:id.:format?'), 'test', 'show')
+        chai.witty.helper(patternHelper.path('/songs/:id.:format?'), 'test', 'show')
           .req(function(req) {
             req.headers.host = 'www.example.com';
           })
@@ -75,17 +75,17 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct path without optional placeholder', function() {
         expect(pathHelper('mr-jones')).to.equal('/songs/mr-jones');
       });
     });
-    
+
     describe('with two placeholders', function() {
       var pathHelper;
-    
+
       before(function(done) {
-        chai.maglev.helper(patternHelper.path('/bands/:band_id/albums/:id'), 'test', 'show')
+        chai.witty.helper(patternHelper.path('/bands/:band_id/albums/:id'), 'test', 'show')
           .req(function(req) {
             req.headers.host = 'www.example.com';
           })
@@ -95,7 +95,7 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct path with number', function() {
         expect(pathHelper(7, 8)).to.equal('/bands/7/albums/8');
         expect(pathHelper(0, 8)).to.equal('/bands/0/albums/8');
@@ -117,17 +117,17 @@ describe('helpers/route/pattern', function() {
         }).to.throw('Incorrect number of arguments passed to route helper for /bands/:band_id/albums/:id');
       });
     });
-    
+
   });
-  
-  
+
+
   describe('url', function() {
-    
+
     describe('without placeholder', function() {
       var urlHelper;
-    
+
       before(function(done) {
-        chai.maglev.dynamicHelper(patternHelper.url('/songs', 'songs'), 'test', 'show')
+        chai.witty.dynamicHelper(patternHelper.url('/songs', 'songs'), 'test', 'show')
           .app(function(app) {
             app.helper('songsPath', patternHelper.path('/songs'));
           }).req(function(req) {
@@ -139,17 +139,17 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct path', function() {
         expect(urlHelper()).to.equal('http://www.example.com/songs');
       });
     });
-    
+
     describe('with one placeholder', function() {
       var urlHelper;
-    
+
       before(function(done) {
-        chai.maglev.dynamicHelper(patternHelper.url('/songs/:id', 'song'), 'test', 'show')
+        chai.witty.dynamicHelper(patternHelper.url('/songs/:id', 'song'), 'test', 'show')
           .app(function(app) {
             app.helper('songPath', patternHelper.path('/songs/:id'));
           }).req(function(req) {
@@ -161,7 +161,7 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct URL with number', function() {
         expect(urlHelper(7)).to.equal('http://www.example.com/songs/7');
         expect(urlHelper(0)).to.equal('http://www.example.com/songs/0');
@@ -179,12 +179,12 @@ describe('helpers/route/pattern', function() {
         }).to.throw('Incorrect number of arguments passed to route helper for /songs/:id');
       });
     });
-    
+
     describe('with two placeholders', function() {
       var urlHelper;
-    
+
       before(function(done) {
-        chai.maglev.dynamicHelper(patternHelper.url('/bands/:band_id/albums/:id', 'bandAlbum'), 'test', 'show')
+        chai.witty.dynamicHelper(patternHelper.url('/bands/:band_id/albums/:id', 'bandAlbum'), 'test', 'show')
           .app(function(app) {
             app.helper('bandAlbumPath', patternHelper.path('/bands/:band_id/albums/:id'));
           }).req(function(req) {
@@ -196,7 +196,7 @@ describe('helpers/route/pattern', function() {
             return done();
           });
       });
-    
+
       it('should build correct path with number', function() {
         expect(urlHelper(7, 8)).to.equal('http://www.example.com/bands/7/albums/8');
         expect(urlHelper(0, 8)).to.equal('http://www.example.com/bands/0/albums/8');
@@ -218,7 +218,7 @@ describe('helpers/route/pattern', function() {
         }).to.throw('Incorrect number of arguments passed to route helper for /bands/:band_id/albums/:id');
       });
     });
-    
+
   });
-  
+
 });
