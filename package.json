@@ -39,6 +39,7 @@
     "actionrouter": "0.1.0",
     "bootable": "0.2.4",
     "bootable-environment": "0.2.0",
+    "chalk": "^1.0.0",
     "co-prompt": "1.0.0",
     "commander": "2.7.1",
     "debug": "2.1.3",
