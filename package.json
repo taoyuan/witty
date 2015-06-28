@@ -1,6 +1,6 @@
 {
   "name": "witty",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "Fast and frictionless MVC web framework for Node.js.",
   "keywords": [
     "express",
