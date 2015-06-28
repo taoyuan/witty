@@ -1,5 +1,6 @@
 {
   "initial": {
+    "expressx#logger": {},
     "connect-powered-by": {
       "params": "Witty"
     },
