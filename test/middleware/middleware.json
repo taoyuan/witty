@@ -1,0 +1,10 @@
+{
+  "initial": {
+    "connect-powered-by": {
+      "params": "Witty"
+    },
+    "../helpers/push-name-middleware": {
+      "params": "custom-middleware"
+    }
+  }
+}
