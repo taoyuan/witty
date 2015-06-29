@@ -21,11 +21,14 @@ describe('witty', function() {
   });
 
   it('should export boot phases', function() {
+    expect(witty.boot.config).to.be.a('function');
     expect(witty.boot.controllers).to.be.a('function');
     expect(witty.boot.views).to.be.a('function');
+    expect(witty.boot.middleware).to.be.a('function');
     expect(witty.boot.routes).to.be.a('function');
     expect(witty.boot.httpServer).to.be.a('function');
     expect(witty.boot.httpServerCluster).to.be.a('function');
+    expect(witty.boot.httpsServer).to.be.a('function');
 
     expect(witty.boot.di).to.be.an('object');
     expect(witty.boot.di.routes).to.be.a('function');
